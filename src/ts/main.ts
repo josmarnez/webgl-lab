@@ -1,9 +1,28 @@
 import resizeCanvas from "./resizeCanvas";
-import mainVert from "/src/glsl/main.vert";
+
+const vertexShaderSource: string = `// Vertex Shader
+#version 300 es
+precision highp float;
+in vec2 aPosition;
+
+void main() {
+    gl_Position = vec4(aPosition, 0.0, 1.0);
+}
+`;
+
+const fragmentShaderSource: string = `// Fragment Shader
+#version 300 es
+precision highp float;
+out vec4 outColor;
+
+void main() {
+    outColor = vec4(1.0, 0.0, 0.0, 1.0); // Red color
+}
+`;
 
 function main(): void {
     console.log("Hello TS");
-    console.log(mainVert);
+    console.log(vertexShaderSource);
     const canvas: HTMLCanvasElement | null =
         document.querySelector("#gl-canvas");
     if (canvas === null) throw new Error("canvas is null");

@@ -8,7 +8,6 @@
     "build": "parcel build"
   },
   "devDependencies": {
-    "@parcel/transformer-glsl": "^2.15.2",
     "parcel": "^2.14.0"
   }
 }
